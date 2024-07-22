@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>workout timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="top">
+      <h1>workout timer</h1>
+      <p class="sub">tabata for now, more soon.</p>
+    </header>
+
+    <section class="stage">
+      <svg class="ring" viewBox="0 0 240 240" aria-hidden="true">
+        <circle class="ring-bg" cx="120" cy="120" r="108" />
+        <circle id="arc" class="ring-arc" cx="120" cy="120" r="108"
+                transform="rotate(-90 120 120)" />
+      </svg>
+      <div class="readout">
+        <div id="phase" class="phase">ready</div>
+        <div id="time" class="time">00:20</div>
+        <div id="roundInfo" class="round">round 1 of 8</div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="startBtn" class="primary">start</button>
+      <button id="pauseBtn" class="ghost" disabled>pause</button>
+      <button id="resetBtn" class="ghost">reset</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

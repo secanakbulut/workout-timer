@@ -1,0 +1,130 @@
+:root {
+  --bg: #0f1115;
+  --panel: #181b22;
+  --line: #262a33;
+  --ink: #ececef;
+  --mute: #8a8d96;
+  --accent: #ff7a59;
+  --rest: #4cc2c2;
+  --ready: #6c7280;
+  --btn: #232730;
+  --btn-hot: #ff7a59;
+  --ring-bg: #232730;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 36px 20px 56px;
+}
+
+.top h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.top .sub {
+  margin: 0 0 22px;
+  color: var(--mute);
+}
+
+.stage {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 8px auto 22px;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ring-bg {
+  fill: none;
+  stroke: var(--ring-bg);
+  stroke-width: 14;
+}
+
+.ring-arc {
+  fill: none;
+  stroke: var(--ready);
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 678.58;
+  stroke-dashoffset: 0;
+}
+
+.ring-arc.work { stroke: var(--accent); }
+.ring-arc.rest { stroke: var(--rest); }
+
+.readout {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.phase {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--mute);
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.round { color: var(--mute); font-size: 13px; }
+
+.controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.controls button {
+  font: inherit;
+  border-radius: 10px;
+  padding: 10px 22px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+}
+
+.primary {
+  background: var(--btn-hot);
+  color: #1a0d08;
+  border-color: var(--btn-hot);
+  font-weight: 600;
+}
+
+.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.ghost {
+  background: var(--btn);
+  color: var(--ink);
+}
+
+.ghost:disabled { opacity: 0.4; cursor: not-allowed; }
