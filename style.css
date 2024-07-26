@@ -41,6 +41,90 @@ main {
   color: var(--mute);
 }
 
+.presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.preset {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  padding: 12px 8px;
+  cursor: pointer;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.preset span {
+  color: var(--mute);
+  font-size: 12px;
+}
+
+.preset:hover { border-color: var(--accent); }
+.preset.on {
+  border-color: var(--accent);
+  background: #1d2028;
+}
+
+.custom {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  display: none;
+}
+
+.custom.open { display: block; }
+
+.custom .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.custom label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: var(--mute);
+  gap: 4px;
+}
+
+.custom input {
+  background: #0f1115;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+}
+
+.custom input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.apply {
+  background: var(--btn);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.apply:hover { border-color: var(--accent); }
+
 .stage {
   position: relative;
   width: 280px;
@@ -67,6 +151,7 @@ main {
   stroke-linecap: round;
   stroke-dasharray: 678.58;
   stroke-dashoffset: 0;
+  transition: stroke .25s;
 }
 
 .ring-arc.work { stroke: var(--accent); }
@@ -95,9 +180,11 @@ main {
   font-size: 56px;
   font-weight: 600;
   line-height: 1;
+  margin: 2px 0 4px;
 }
 
 .round { color: var(--mute); font-size: 13px; }
+.next { color: var(--mute); font-size: 12px; margin-top: 4px; }
 
 .controls {
   display: flex;
@@ -128,3 +215,4 @@ main {
 }
 
 .ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+.ghost:hover:not(:disabled) { border-color: var(--accent); }

@@ -10,8 +10,30 @@
   <main>
     <header class="top">
       <h1>workout timer</h1>
-      <p class="sub">tabata for now, more soon.</p>
+      <p class="sub">hiit, tabata, emom. pick one or roll your own.</p>
     </header>
+
+    <section class="presets">
+      <button class="preset" data-preset="tabata">tabata <span>20/10 x8</span></button>
+      <button class="preset" data-preset="hiit">classic hiit <span>30/30 x10</span></button>
+      <button class="preset" data-preset="emom">emom <span>60s x10</span></button>
+      <button class="preset" data-preset="custom">custom</button>
+    </section>
+
+    <section class="custom" id="customPanel">
+      <div class="row">
+        <label>work
+          <input id="workSec" type="number" min="5" max="600" value="40" />
+        </label>
+        <label>rest
+          <input id="restSec" type="number" min="0" max="600" value="20" />
+        </label>
+        <label>rounds
+          <input id="rounds" type="number" min="1" max="50" value="8" />
+        </label>
+      </div>
+      <button id="applyCustom" class="apply">use these</button>
+    </section>
 
     <section class="stage">
       <svg class="ring" viewBox="0 0 240 240" aria-hidden="true">
@@ -23,6 +45,7 @@
         <div id="phase" class="phase">ready</div>
         <div id="time" class="time">00:20</div>
         <div id="roundInfo" class="round">round 1 of 8</div>
+        <div id="nextLine" class="next">first up: work 20s</div>
       </div>
     </section>
 
