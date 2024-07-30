@@ -34,6 +34,7 @@ main {
   margin: 0 0 4px;
   font-size: 28px;
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .top .sub {
@@ -60,6 +61,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 2px;
+  transition: border-color .15s, background .15s;
 }
 
 .preset span {
@@ -149,6 +151,7 @@ main {
   stroke: var(--ready);
   stroke-width: 14;
   stroke-linecap: round;
+  /* circumference for r=108 is 678.58, set in JS too */
   stroke-dasharray: 678.58;
   stroke-dashoffset: 0;
   transition: stroke .25s;
@@ -190,6 +193,7 @@ main {
   display: flex;
   gap: 8px;
   justify-content: center;
+  margin-bottom: 18px;
 }
 
 .controls button {
@@ -207,12 +211,32 @@ main {
   font-weight: 600;
 }
 
-.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .ghost {
   background: var(--btn);
   color: var(--ink);
 }
 
-.ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+.ghost:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .ghost:hover:not(:disabled) { border-color: var(--accent); }
+
+.foot {
+  text-align: center;
+  color: var(--mute);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+  .presets { grid-template-columns: repeat(2, 1fr); }
+  .stage { width: 240px; height: 240px; }
+  .time { font-size: 48px; }
+}
