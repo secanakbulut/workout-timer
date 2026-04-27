@@ -1,5 +1,7 @@
 # workout timer
 
+![](docs/screenshot.png)
+
 interval timer for the classic stuff: tabata, hiit, emom. picked it up after using a borrowed gym timer that did the job and not much else, and i wanted one that lived in a browser tab so i could glance at it from the couch.
 
 three preset buttons, a custom panel for your own work/rest/rounds, a big countdown ring that swaps colour between work and rest, a tiny "next" line so you know what is coming, and a beep on every transition.
